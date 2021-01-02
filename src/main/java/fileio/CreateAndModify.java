@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Date;
 
 public class CreateAndModify {
 
@@ -50,6 +51,16 @@ public class CreateAndModify {
 		}
 		String inputFile = stringBuilder.toString();
 		System.out.println(inputFile);
+	}
+	
+	public void modifyFile(String modifyFile) {
+		try {
+            byte[] message = String.format("[%s] EDIT %s\n", new Date(), modifyFile).getBytes();
+            fileOutputStream.write(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Unable to write to debug log. Message: " + e.getMessage());
+        }
 	}
 
 }
