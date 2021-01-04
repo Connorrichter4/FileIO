@@ -9,7 +9,7 @@ public class App {
 			
 		CreateAndModify newFile = new CreateAndModify();
 		newFile.readFromFile();
-		newFile.modifyFile("I am editing this file!");
+		newFile.modifyFile("I am editing this file again!");
 		newFile.readFromFile();
 		
 	}
